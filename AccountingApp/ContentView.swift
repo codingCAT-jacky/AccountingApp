@@ -8,14 +8,23 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @StateObject private var fetcher = productCRUD()
+    @StateObject private var myAccount = loginAccount()
+    @AppStorage("userIdentity") var userIdentity : String = ""
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("test!")
+        
+        if(userIdentity == "")
+        {
+            SignInView().environmentObject(fetcher)
+                        .environmentObject(myAccount)
         }
-        .padding()
+        else
+        {
+            HomeView(identity: $userIdentity).environmentObject(fetcher)
+                              .environmentObject(myAccount)
+        }
+        
     }
 }
 
@@ -24,3 +33,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+

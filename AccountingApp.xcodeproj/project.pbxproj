@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A0789F7295B9292002B90C4 /* dateRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0789F6295B9292002B90C4 /* dateRow.swift */; };
+		0A14F48F295B037300DB9D03 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A14F48E295B037300DB9D03 /* SignInView.swift */; };
+		0A14F491295B039B00DB9D03 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A14F490295B039B00DB9D03 /* SignUpView.swift */; };
+		0A14F493295B044A00DB9D03 /* FavStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A14F492295B044A00DB9D03 /* FavStruct.swift */; };
+		0A270C8A2964E2C800124A1D /* changeProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A270C892964E2C800124A1D /* changeProduct.swift */; };
+		0A270C8C2964F36000124A1D /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A270C8B2964F36000124A1D /* SearchView.swift */; };
+		0A270C8E296567A300124A1D /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A270C8D296567A300124A1D /* test.swift */; };
+		0A3914D3295B62B7006F8AC6 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3914D2295B62B7006F8AC6 /* HomeView.swift */; };
+		0A498EE1293E3EA800949522 /* collectionFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A498EE0293E3EA800949522 /* collectionFile.swift */; };
+		0A498EE3293EE96D00949522 /* productRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A498EE2293EE96D00949522 /* productRow.swift */; };
 		0A604DC1293BC41000DE054B /* AccountingAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A604DC0293BC41000DE054B /* AccountingAppApp.swift */; };
 		0A604DC3293BC41000DE054B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A604DC2293BC41000DE054B /* ContentView.swift */; };
 		0A604DC5293BC41200DE054B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A604DC4293BC41200DE054B /* Assets.xcassets */; };
@@ -14,6 +24,8 @@
 		0A604DD3293BC41200DE054B /* AccountingAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A604DD2293BC41200DE054B /* AccountingAppTests.swift */; };
 		0A604DDD293BC41200DE054B /* AccountingAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A604DDC293BC41200DE054B /* AccountingAppUITests.swift */; };
 		0A604DDF293BC41200DE054B /* AccountingAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A604DDE293BC41200DE054B /* AccountingAppUITestsLaunchTests.swift */; };
+		0AB9246B295BC50F00612207 /* calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB9246A295BC50F00612207 /* calendar.swift */; };
+		0AB9246D295BCF0300612207 /* addProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB9246C295BCF0300612207 /* addProductView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +46,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A0789F6295B9292002B90C4 /* dateRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dateRow.swift; sourceTree = "<group>"; };
+		0A14F48E295B037300DB9D03 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		0A14F490295B039B00DB9D03 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		0A14F492295B044A00DB9D03 /* FavStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavStruct.swift; sourceTree = "<group>"; };
+		0A270C892964E2C800124A1D /* changeProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = changeProduct.swift; sourceTree = "<group>"; };
+		0A270C8B2964F36000124A1D /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		0A270C8D296567A300124A1D /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
+		0A3914D2295B62B7006F8AC6 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		0A498EDF293E393F00949522 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		0A498EE0293E3EA800949522 /* collectionFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = collectionFile.swift; sourceTree = "<group>"; };
+		0A498EE2293EE96D00949522 /* productRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = productRow.swift; sourceTree = "<group>"; };
 		0A604DBD293BC41000DE054B /* AccountingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AccountingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A604DC0293BC41000DE054B /* AccountingAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountingAppApp.swift; sourceTree = "<group>"; };
 		0A604DC2293BC41000DE054B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -45,6 +68,8 @@
 		0A604DD8293BC41200DE054B /* AccountingAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AccountingAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A604DDC293BC41200DE054B /* AccountingAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountingAppUITests.swift; sourceTree = "<group>"; };
 		0A604DDE293BC41200DE054B /* AccountingAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountingAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		0AB9246A295BC50F00612207 /* calendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calendar.swift; sourceTree = "<group>"; };
+		0AB9246C295BCF0300612207 /* addProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addProductView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,8 +120,21 @@
 		0A604DBF293BC41000DE054B /* AccountingApp */ = {
 			isa = PBXGroup;
 			children = (
+				0A498EDF293E393F00949522 /* Info.plist */,
 				0A604DC0293BC41000DE054B /* AccountingAppApp.swift */,
+				0A3914D2295B62B7006F8AC6 /* HomeView.swift */,
+				0AB9246C295BCF0300612207 /* addProductView.swift */,
+				0AB9246A295BC50F00612207 /* calendar.swift */,
+				0A270C8B2964F36000124A1D /* SearchView.swift */,
+				0A270C892964E2C800124A1D /* changeProduct.swift */,
+				0A0789F6295B9292002B90C4 /* dateRow.swift */,
 				0A604DC2293BC41000DE054B /* ContentView.swift */,
+				0A14F48E295B037300DB9D03 /* SignInView.swift */,
+				0A14F490295B039B00DB9D03 /* SignUpView.swift */,
+				0A14F492295B044A00DB9D03 /* FavStruct.swift */,
+				0A498EE2293EE96D00949522 /* productRow.swift */,
+				0A270C8D296567A300124A1D /* test.swift */,
+				0A498EE0293E3EA800949522 /* collectionFile.swift */,
 				0A604DC4293BC41200DE054B /* Assets.xcassets */,
 				0A604DC6293BC41200DE054B /* AccountingApp.entitlements */,
 				0A604DC7293BC41200DE054B /* Preview Content */,
@@ -259,8 +297,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A0789F7295B9292002B90C4 /* dateRow.swift in Sources */,
+				0A14F48F295B037300DB9D03 /* SignInView.swift in Sources */,
+				0A270C8A2964E2C800124A1D /* changeProduct.swift in Sources */,
 				0A604DC3293BC41000DE054B /* ContentView.swift in Sources */,
+				0A14F491295B039B00DB9D03 /* SignUpView.swift in Sources */,
+				0A14F493295B044A00DB9D03 /* FavStruct.swift in Sources */,
+				0AB9246D295BCF0300612207 /* addProductView.swift in Sources */,
+				0A498EE1293E3EA800949522 /* collectionFile.swift in Sources */,
+				0A270C8C2964F36000124A1D /* SearchView.swift in Sources */,
+				0A3914D3295B62B7006F8AC6 /* HomeView.swift in Sources */,
+				0A498EE3293EE96D00949522 /* productRow.swift in Sources */,
 				0A604DC1293BC41000DE054B /* AccountingAppApp.swift in Sources */,
+				0AB9246B295BC50F00612207 /* calendar.swift in Sources */,
+				0A270C8E296567A300124A1D /* test.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,6 +467,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"AccountingApp/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AccountingApp/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -453,6 +504,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"AccountingApp/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AccountingApp/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;

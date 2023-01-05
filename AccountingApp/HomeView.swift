@@ -18,7 +18,9 @@ struct HomeView: View {
     @State private var selectedYear = 4
     @State private var showCalendar = false
     @State private var showSearch = false
+    @State private var showChangeProduct = false
     @State private var showAddProductView = false
+    @State private var showBack = false
     @State private var pickerText = ""
     @State private var showSecondaryView = false
     @State private var showSearchView = false
@@ -30,6 +32,8 @@ struct HomeView: View {
     var body: some View {
                     
         ZStack{
+            NavigationView
+            {
             VStack{
                 HStack(spacing: 124) {
                     Button(action: {
@@ -88,7 +92,6 @@ struct HomeView: View {
                 if showSecondaryView {
                                     
                     VStack(spacing:30) {
-                        
                         Button(action: {
                             UserDefaults.standard.set("", forKey: "userIdentity")
                         }){
@@ -108,9 +111,12 @@ struct HomeView: View {
                             .background(Color.blue)
                             .cornerRadius(40)
                         .fullScreenCover(isPresented: $showSearch, content: {
-                            SearchView()
+                            SearchView(showSearchView: $showSearch)
                                 .environmentObject(fetcher)
+                            
                         })
+                        ShareLink(item: Image("easyAccounting"), preview:
+                                    SharePreview("share", image: Image(systemName: "square.and.arrow.up")))
                     }
                     .padding()
                     .frame(minWidth: 0, maxWidth: UIScreen.main.bounds.width/2, minHeight: 0, maxHeight: .infinity)
@@ -124,7 +130,7 @@ struct HomeView: View {
                         Text("月支出")
                         Text("\(fetcher.monExpense)")
                     }
-                    .frame(width: 30, height: 30)
+                    .frame(width: 80, height: 50)
                     .background(.yellow)
                     VStack{
                         Text("月結餘\(fetcher.monTotal)")
@@ -138,35 +144,34 @@ struct HomeView: View {
                         Text("\(fetcher.monIncome)")
                             
                     }
+                    .frame(width: 80, height: 50)
+                    .background(.yellow)
                 }
                 
-                NavigationView
-                {
+                
                     List
                     {
-                        
-                            ForEach(0..<fetcher.productsDArr.count, id: \.self)
+                        ForEach(0..<fetcher.productsDArr.count, id: \.self)
+                        {
+                            index in
+                            if(!fetcher.productsDArr[index].isEmpty)
                             {
-                                index in
-                                if(!fetcher.productsDArr[index].isEmpty)
-                                {
-                                    Section{
-                                        ForEach(fetcher.productsDArr[index])
-                                        {
-                                            product1 in
-                                            NavigationLink(
-                                                destination: addProductView().environmentObject(fetcher)
-                                                ,
-                                                label: {
-                                                    productRow(product: product1)
-                                                })
-                                        }
-                                        
-                                    } header: {
-                                        dateRow(product: fetcher.productsDArr[index][0])
+                                Section{
+                                    ForEach(fetcher.productsDArr[index])
+                                    {
+                                        product1 in
+                                        NavigationLink(
+                                            destination: changeProduct(showChangeProduct: $showChangeProduct, inputProduct: product1).environmentObject(fetcher)
+                                            ,
+                                            label: {
+                                                productRow(product: product1)
+                                            })
                                     }
+                                } header: {
+                                    dateRow(product: fetcher.productsDArr[index][0])
                                 }
                             }
+                        }
                     }
                     .listStyle(.plain)
                     .onAppear{
@@ -183,7 +188,13 @@ struct HomeView: View {
                             print("monIncome=\(fetcher.monIncome)")
                         }
                     }
-                }
+                    .refreshable{
+                        let now = today.formatted(.iso8601)
+                        let index = now.index(now.startIndex, offsetBy: 10)
+                        let dateIn = String(now[..<index])
+                        fetcher.getProductByDate(date: dateIn)
+                    }
+                
                 Button{
                     showAddProductView.toggle()
                 }label: {
@@ -193,10 +204,11 @@ struct HomeView: View {
                         .frame(width: 40, height: 40)
                         .clipShape(Circle())
                   }
-                .fullScreenCover(isPresented: $showAddProductView, content: { addProductView()
+                .fullScreenCover(isPresented: $showAddProductView, content: { addProductView(showAddProduct: $showAddProductView).environmentObject(fetcher)
                 })
                 
                   
+            }
             }
         }
         

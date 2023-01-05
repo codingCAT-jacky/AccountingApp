@@ -19,6 +19,15 @@ struct product: Codable, Identifiable{
     let accountingType:String
     let description:String?
 }
+
+struct productCreate: Codable{
+    let date:String
+    let category:String
+    let price:Int
+    let accountingType:String
+    let description:String
+}
+
 extension product{
     static let demoproduct = product(id: "demoproduct", date: "2022-12-06", category: "測試", price: 10, accountingType: "income", description: "nothing")
 }
@@ -82,9 +91,9 @@ class productCRUD : ObservableObject{
                                 self.monTotal = self.monTotal - item.price
                                 self.monExpense = self.monExpense - item.price
                             }
-                            print("monTotal=\(self.monTotal)")
-                            print("monExpense=\(self.monExpense)")
-                            print("monIncome=\(self.monIncome)")
+//                            print("monTotal=\(self.monTotal)")
+//                            print("monExpense=\(self.monExpense)")
+//                            print("monIncome=\(self.monIncome)")
                             if(dateArr.contains(item.date))
                             {
                                 productInDate.append(item)
@@ -100,14 +109,14 @@ class productCRUD : ObservableObject{
                                 productInDate.removeAll()
                                 productInDate.append(item)
                             }
-                            print("productInDate=\(productInDate[0].date)")
+//                            print("productInDate=\(productInDate[0].date)")
                         }
                         self.productsDArr.append(productInDate)
-                        print("by date: products=")
+//                        print("by date: products=")
                         for index in 0..<self.productsDArr.count
                         {
-                            print("index=\(index)")
-                            print(self.productsDArr[index])
+//                            print("index=\(index)")
+//                            print(self.productsDArr[index])
                         }
                     }
                 }
@@ -124,6 +133,7 @@ class productCRUD : ObservableObject{
             }
         }.resume()
     }
+    
     func getProductByCategory(category:String)
     {
         let urlString = "http://localhost:8080/products/category?category=\(category)"
@@ -153,9 +163,10 @@ class productCRUD : ObservableObject{
             }
         }.resume()
     }
-    func getProductByDescription(Description:String)
+    
+    func getAllProduct()
     {
-        let urlString = "http://localhost:8080/products/description?description=\(Description)"
+        let urlString = "http://localhost:8080/AllProducts"
         print(urlString)
         guard let urlString = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
               let url = URL(string: urlString) else {
@@ -169,7 +180,7 @@ class productCRUD : ObservableObject{
                     DispatchQueue.main.async {
                         self.products = SearchResponse
                         self.error = nil
-                        print("by description : products=")
+                        print("by All: products=")
                         print(self.products)
                     }
                 }
@@ -182,35 +193,7 @@ class productCRUD : ObservableObject{
             }
         }.resume()
     }
-    func getProductByPriceBetween(PriceFrom:Int, PriceTo:Int)
-    {
-        let urlString = "http://localhost:8080/pricebetween?pricefrom=\(PriceFrom)&priceto=\(PriceTo)"
-        print(urlString)
-        guard let urlString = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
-              let url = URL(string: urlString) else {
-                  error = FetchError.invalidURL
-                  return
-        }
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            if let data{
-                do{
-                    let SearchResponse = try JSONDecoder().decode([product].self, from: data)
-                    DispatchQueue.main.async {
-                        self.products = SearchResponse
-                        self.error = nil
-                        print("by priceBetween : products=")
-                        print(self.products)
-                    }
-                }
-                catch{
-                    self.error = error
-                }
-            }
-            else if let error{
-                self.error = error
-            }
-        }.resume()
-    }
+    
     func getProductByOneDate(date:String)
     {
         let urlString = "http://localhost:8080/date?date=\(date)"
@@ -245,8 +228,8 @@ class productCRUD : ObservableObject{
                                 self.datExpense = self.datExpense - item.price
                             }
                         }
-                        print("by one date")
-                        print(self.products)
+//                        print("by one date")
+//                        print(self.products)
                     }
                 }
                 catch{

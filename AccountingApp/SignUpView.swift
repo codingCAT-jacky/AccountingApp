@@ -102,7 +102,7 @@ struct SignUpView: View {
                 })
                 .alert(isPresented: $showAlert, content: {
                     if(alertType1){
-                      return Alert(title: Text("註冊失敗"))
+                      return Alert(title: Text("網路連接失敗"))
                     }
                     else{
                       return Alert(title: Text("密碼與確認密碼不符！"))

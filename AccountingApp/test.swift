@@ -51,8 +51,7 @@ struct test: View {
                     }){
                         Text("搜尋")
                     }
-                    .fullScreenCover(isPresented: $showSearchView, content: { SearchView()
-                    })
+                    
                     .frame(width: 100, height: 50, alignment: .center)
                         .foregroundColor(.white)
                         .background(Color.blue)

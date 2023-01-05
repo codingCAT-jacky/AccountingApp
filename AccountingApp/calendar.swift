@@ -10,6 +10,7 @@ import SwiftUI
 struct calendar: View {
     @State private var choseTime = Date()
     @State private var choseTimeString = ""
+    @State private var showChangeProduct = false
     @Binding var showCalendar : Bool
     @EnvironmentObject var fetcher : productCRUD
     let dateFormatter: DateFormatter = {
@@ -19,6 +20,7 @@ struct calendar: View {
     }()
     var body: some View {
         VStack{
+            
             HStack(spacing:93){
                 Button{
                     showCalendar.toggle()
@@ -53,10 +55,19 @@ struct calendar: View {
                     let inputDate = dateFormatter.string(from: choseTime)
                     fetcher.getProductByOneDate(date: inputDate)
                 }
-            HStack{
-                Text("支出\n\(fetcher.monExpense)")
-                Text("結餘\n\(fetcher.monTotal)")
-                Text("收入\n\(fetcher.monIncome)")
+            HStack(spacing:45){
+                HStack{
+                    Image(systemName: "dollarsign.circle")
+                    Text("支出\(fetcher.datExpense)")
+                }
+                HStack{
+                    Image(systemName: "bookmark.fill")
+                    Text("結餘\(fetcher.datTotal)")
+                }
+                HStack{
+                    Image(systemName: "cart.circle")
+                    Text("收入\(fetcher.datIncome)")
+                }
             }
             List
             {
@@ -65,7 +76,7 @@ struct calendar: View {
                     product1 in
                     NavigationLink(
                     destination:
-                        changeProduct(product: product1).environmentObject(fetcher)
+                        changeProduct(showChangeProduct:$showChangeProduct, inputProduct: product1).environmentObject(fetcher)
                                     ,
                         label: {
                             productRow(product: product1)
@@ -86,6 +97,6 @@ struct calendar: View {
 
 struct calendar_Previews: PreviewProvider {
     static var previews: some View {
-        calendar(showCalendar: .constant(true))
+        calendar(showCalendar: .constant(true)).environmentObject(productCRUD())
     }
 }
